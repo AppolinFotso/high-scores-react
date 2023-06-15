@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import HighScoreTable from "./HighScoreTable";
+import allCountryScores from "./scores";
+import { nanoid } from "nanoid";
 
+//
 function App() {
+  const tableByCountry = allCountryScores.map((el) => {
+    return (
+      <HighScoreTable key={nanoid()} country={el.name} scores={el.scores} />
+    );
+  });
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>High Score App</p>
       </header>
+      {tableByCountry}
     </div>
   );
 }
