@@ -3,7 +3,7 @@ import "./App.css";
 import HighScoreTable from "./HighScoreTable";
 import allCountryScores from "./scores";
 import { nanoid } from "nanoid";
-
+import sortMe from "./sortMyNumber";
 //
 function App() {
   const tableByCountry = allCountryScores.map((el) => {
@@ -17,7 +17,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>High Score App</p>
       </header>
-      {tableByCountry}
+      <div className="App-title">
+        <h1> High Scores per Country</h1>
+        <button className="btn btn-primary" onClick={sortMe}>
+          Sort Scores
+        </button>
+        <div className="flexTable">{tableByCountry}</div>
+      </div>
     </div>
   );
 }

@@ -2,8 +2,12 @@
   text-align: center;
 }
 
+.App-title {
+  margin-top: 2em;
+}
+
 .App-logo {
-  height: 15vmin;
+  height: 12vmin;
   pointer-events: none;
 }
 
@@ -17,7 +21,6 @@
   background-color: #282c34;
   height: 15vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -35,4 +38,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.tableWidth {
+  width: 32vw;
+  margin-top: 1.5em;
+  border: 5px solid rgba(55, 243, 65, 0.705);
+}
+
+.flexTable {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.blueText {
+  color: rgb(51, 54, 204);
+}
+.redText {
+  color: red;
+}
+.blackText {
+  color: black;
 }

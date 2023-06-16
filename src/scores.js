@@ -61,5 +61,14 @@ let allCountryScores = [
     ],
   },
 ];
-
-export default allCountryScores;
+const newAllAcountryScores = [];
+const listOfCountriesName = allCountryScores.map((el) => el.name);
+listOfCountriesName.sort();
+for (let i = 0; i < listOfCountriesName.length; i++) {
+  for (let j = 0; j < allCountryScores.length; j++) {
+    if (allCountryScores[j].name === listOfCountriesName[i]) {
+      newAllAcountryScores.push(allCountryScores[j]);
+    }
+  }
+}
+export default newAllAcountryScores;
