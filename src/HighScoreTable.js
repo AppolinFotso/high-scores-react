@@ -5,7 +5,13 @@ import PlayerScore from "./PlayerScore";
 
 function HighScoreTable(props) {
   const rowOfScore = props.scores.map((el) => {
-    return <PlayerScore key={nanoid()} player={el.n} score={Number(el.s)} />;
+    return (
+      <PlayerScore
+        key={nanoid()}
+        player={el.n}
+        score={typeof el.s === "string" ? Number(el.s) : el.s}
+      />
+    );
   });
   return (
     <div>
